@@ -14,7 +14,9 @@ security:
             security: false
 
         main:
-            anonymous: ~
+            pattern: ^/
+            anonymous: true
+            # anonymous: ~
             # activate different ways to authenticate
 
             # http_basic: ~
