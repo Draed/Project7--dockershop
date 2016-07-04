@@ -45,5 +45,5 @@ empty for now
 
 ## images / explications :
 
-![alt tag](https://github.com/Draed/dockershop/master/explain_images/explainshop.png)
+![alt tag](https://raw.githubusercontent.com/Draed/dockershop/master/explain_images/explainshop.png)
 
