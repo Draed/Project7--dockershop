@@ -137,4 +137,30 @@ class AppController extends Controller
             ->getForm()
         ;
     }
+    
+    /**
+     * execute a shell command "docker pull <application-name>"
+     * pull is like download
+     * @param App $app The App name
+     *
+     * @return "bolean", true if correct pull , false if fail.
+     */
+    
+    private function pullApp(App $app)
+    {
+        ;
+    }
+    
+        /**
+     * execute a shell command "docker push <application-name>"
+     * push is like upload
+     * @param App $app The App name
+     *
+     * @return "bolean", true if correct pull , false if fail.
+     */
+    
+    private function pushApp(App $app)
+    {
+        ;
+    }
 }

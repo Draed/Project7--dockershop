@@ -1,6 +1,10 @@
 dockershop
 ==========
 A Symfony project created on June 30, 2016, 12:25 pm.
+## Développeur initiaux :
+
+Arnaud Panapadeatchy as PanArnaud
+Draed as Draed
 
 ## langage développement :
 
@@ -42,5 +46,8 @@ https://dreadperblog.files.wordpress.com/2016/06/index1_thumb.png?w=720&quality=
 ## Screenshot :
 
 empty for now
-==========
+
+## images / explications :
+
+![alt tag](https://raw.githubusercontent.com/Draed/dockershop/master/explain_images/explainshop.png)
 
