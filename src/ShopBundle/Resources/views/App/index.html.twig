@@ -5,8 +5,19 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="title is-1">Some awesome apps</h1>
-
+    <div class="section">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h1 class="title is-1">Some awesome apps</h1>
+            </div>
+            <div class="column">
+                <a class="button is-primary is-medium" href="{{ path('app_new') }}">
+                    <span class="icon">
+                        <i class="fa fa-plus"></i>
+                    </span>Create a new entry
+                </a>
+            </div>
+        </div>
     <div class="columns is-multiline is-mobile">
         {% for app in apps %}
             <div class="column is-one-quarter">
@@ -25,19 +36,14 @@
                         <br>
                             {# <small>11:09 PM - 1 Jan 2016</small> #}
                         </div>
+                        <footer class="card-footer">
+                            <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
+                            <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
+                        </footer>
                     </div>
-                    <footer class="card-footer">
-                        <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
-                        <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
-                    </footer>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-
-    <ul>
-        <li>
-            <a href="{{ path('app_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+            
 {% endblock %}
