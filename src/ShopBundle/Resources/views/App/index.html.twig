@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Some awesome applications</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Version</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for app in apps %}
+            <tr>
+                <td><a href="{{ path('app_show', { 'id': app.id }) }}">{{ app.id }}</a></td>
+                <td>{{ app.name }}</td>
+                <td>{{ app.version }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('app_show', { 'id': app.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('app_edit', { 'id': app.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('app_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
