@@ -30,20 +30,18 @@
                     <div class="card-content">
                         <div class="content">
                             <strong>Version:</strong> {{ app.version }}</a>
-                        <br>
-                        <div class="content">
-                            <strong>Description</strong> {{ app.description }}</a>
-                        <br>
+                            <br>
+                            <strong>Description: </strong> {{ app.description }}</a>
                             {# <small>11:09 PM - 1 Jan 2016</small> #}
                         </div>
-                        <footer class="card-footer">
-                            <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
-                            <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
-                        </footer>
                     </div>
+                    <footer class="card-footer">
+                        <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
+                        <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
+                    </footer>
                 </div>
-            {% endfor %}
-        </div>
+            </div>
+        {% endfor %}
     </div>
             
 {% endblock %}
