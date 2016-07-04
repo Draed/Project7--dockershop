@@ -1,10 +1,22 @@
 dockershop
 ==========
 A Symfony project created on June 30, 2016, 12:25 pm.
+
+##Description :
+Plug and play d'application : Avec docker virtualiser n'importe quel service à moindre coût (cpu/mémoire).
+
+Convertir tous services en applications gràce à docker. A la manière du dockerhub, avec un aspect plus "user-friendly" que "développeur" :
+
+1) Télécharger docker
+2) Créer un compte sur la plateforme
+3) Télécharger une (ou plusieurs) application sur la web-app
+4) Si besoin, paramétrer le service.
+5) Fin ! Profiter de votre service (dhcp, dns, cloud, mail, jenkins, redmine, minecraft, ...)
+
 ## Développeurs initiaux :
 
-Arnaud Panapadeatchy as PanArnaud
-Draed as Draed
+- Arnaud Panapadeatchy as PanArnaud
+- Draed as Draed
 
 ## langage développement :
 
