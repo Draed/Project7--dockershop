@@ -35,12 +35,26 @@ class App
      */
     private $version;
 
-        /**
+    /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255)
+     */
+    private $image;
+    
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="parametres", type="string", length=255)
+     */
+    private $parametres;
 
     /**
      * Get id
@@ -99,9 +113,9 @@ class App
     }
     
     /**
-     * Set version
+     * Set description
      *
-     * @param string $version
+     * @param string $description
      * @return App
      */
     public function setDescription($description)
@@ -112,12 +126,58 @@ class App
     }
 
     /**
-     * Get version
+     * Get description
      *
      * @return string 
      */
     public function getDescription()
     {
         return $this->description;
+    }
+    
+    /**
+     * Set image
+     *
+     * @param string $image 
+     * @return App
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    /**
+     * Set parametres
+     *
+     * @param string $parametres 
+     * @return App
+     */
+    public function setParametres($parametres)
+    {
+        $this->parametres = $parametres;
+
+        return $this;
+    }
+
+    /**
+     * Get parametres
+     *
+     * @return string 
+     */
+    public function getParametres()
+    {
+        return $this->parametres;
     }
 }
