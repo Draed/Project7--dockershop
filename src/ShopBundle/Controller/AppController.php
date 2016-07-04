@@ -28,7 +28,7 @@ class AppController extends Controller
 
         $apps = $em->getRepository('ShopBundle:App')->findAll();
 
-        return $this->render('app/index.html.twig', array(
+        return $this->render('ShopBundle:App:index.html.twig', array(
             'apps' => $apps,
         ));
     }
@@ -53,7 +53,7 @@ class AppController extends Controller
             return $this->redirectToRoute('app_show', array('id' => $app->getId()));
         }
 
-        return $this->render('app/new.html.twig', array(
+        return $this->render('ShopBundle:App:new.html.twig', array(
             'app' => $app,
             'form' => $form->createView(),
         ));
@@ -69,7 +69,7 @@ class AppController extends Controller
     {
         $deleteForm = $this->createDeleteForm($app);
 
-        return $this->render('app/show.html.twig', array(
+        return $this->render('ShopBundle:App:show.html.twig', array(
             'app' => $app,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -95,7 +95,7 @@ class AppController extends Controller
             return $this->redirectToRoute('app_edit', array('id' => $app->getId()));
         }
 
-        return $this->render('app/edit.html.twig', array(
+        return $this->render('ShopBundle:App:edit.html.twig', array(
             'app' => $app,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
