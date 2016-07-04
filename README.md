@@ -42,5 +42,8 @@ https://dreadperblog.files.wordpress.com/2016/06/index1_thumb.png?w=720&quality=
 ## Screenshot :
 
 empty for now
-==========
+
+## images / explications :
+
+![alt tag](https://github.com/Draed/dockershop/master/explain_images/explainshop.png)
 
