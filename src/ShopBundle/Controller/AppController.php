@@ -61,7 +61,7 @@ class AppController extends Controller
 
     /**
      * Finds and displays a App entity.
-     *
+     * show only the latest version of the app.
      * @Route("/{id}", name="app_show")
      * @Method("GET")
      */
@@ -146,12 +146,12 @@ class AppController extends Controller
      * @return "bolean", true if correct pull , false if fail.
      */
     
-    private function pullApp(App $app)
+    private function pullApp(String $application)
     {
         ;
     }
     
-        /**
+    /**
      * execute a shell command "docker push <application-name>"
      * push is like upload
      * @param App $app The App name
@@ -159,8 +159,37 @@ class AppController extends Controller
      * @return "bolean", true if correct pull , false if fail.
      */
     
-    private function pushApp(App $app)
+    private function pushApp(String $application)
+    {
+        ;
+    }
+    
+    /**
+     * execute a shell command "docker pull <application-name>:latest"
+     * pull is like download
+     * change the version, execute a pull, 
+     * @param App $app The App name
+     *
+     * @return "bolean", true if correct pull , false if fail.
+     */
+    
+    private function updateVersion(String $application)
+    {
+        ;
+    }
+    
+    /**
+     * get all the version of an app
+     * only the 5 latest version are stored
+     *  
+     * @param App $app The App name
+     *
+     * @return list of all version.
+     */
+    
+    private function showAllVersion(String $application)
     {
         ;
     }
 }
+
