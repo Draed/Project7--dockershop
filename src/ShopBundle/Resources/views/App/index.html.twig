@@ -18,22 +18,23 @@
                 </a>
             </div>
         </div>
-
-        <div class="columns is-multiline is-mobile">
-            {% for app in apps %}
-                <div class="column is-one-quarter">
-                    <div class="card is-fullwidth">
-                        <header class="card-header">
-                            <p class="card-header-title">
-                                <a href="{{ path('app_show', { 'id': app.id }) }}">{{ app.name }}</a>
-                            </p>
-                        </header>
-                        <div class="card-content">
-                            <div class="content">
-                                <strong>Version:</strong> {{ app.version }}</a>
-                            <br>
-                                {# <small>11:09 PM - 1 Jan 2016</small> #}
-                            </div>
+    <div class="columns is-multiline is-mobile">
+        {% for app in apps %}
+            <div class="column is-one-quarter">
+                <div class="card is-fullwidth">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            <a href="{{ path('app_show', { 'id': app.id }) }}">{{ app.name }}</a>
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            <strong>Version:</strong> {{ app.version }}</a>
+                        <br>
+                        <div class="content">
+                            <strong>Description</strong> {{ app.description }}</a>
+                        <br>
+                            {# <small>11:09 PM - 1 Jan 2016</small> #}
                         </div>
                         <footer class="card-footer">
                             <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
