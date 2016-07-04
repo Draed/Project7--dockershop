@@ -35,6 +35,12 @@ class App
      */
     private $version;
 
+        /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
 
     /**
      * Get id
@@ -90,5 +96,28 @@ class App
     public function getVersion()
     {
         return $this->version;
+    }
+    
+    /**
+     * Set version
+     *
+     * @param string $version
+     * @return App
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get version
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

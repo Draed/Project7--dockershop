@@ -17,6 +17,7 @@ class AppType extends AbstractType
         $builder
             ->add('name')
             ->add('version')
+            ->add('description')
         ;
     }
     
