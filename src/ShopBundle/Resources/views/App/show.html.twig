@@ -1,48 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>App</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ app.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ app.name }}</td>
-            </tr>
-            <tr>
-                <th>Version</th>
-                <td>{{ app.version }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ app.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ app.image }}</td>
-            </tr>
-            <tr>
-                <th>Paramètres</th>
-                <td>{{ app.parametres }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('app_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
-        </li>
-        <li>
+    <div class="columns is-vcentered">
+        <div class="column is-half">
+            <a class="button" href="{{ path('app_index') }}">Back to the list</a>
+        </div>
+    </div>
+    <div class="columns is-vcentered">
+        <div class="column is-two-thirds">
+            <h1 class="title is-1">{{ app.name }}</h1>
+        </div>
+        <div class="column">
+            <a class="button is-success is-medium" href="{{ path('app_edit', { 'id': app.id }) }}">
+                <span class="icon">
+                    <i class="fa fa-edit"></i>
+                </span>Edit
+            </a>
+        </div>
+        <div class="column ">
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="button is-danger is-medium" type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        </div>
+    </div>
+    <div class="content">
+        <!-- TODO : Place l'image de l'app quelque part, je ne sais pas où... -->
+
+        <p>Last version: <span class="tag is-success is-small">{{ app.version }}</span></p>
+        <p>{{ app.description }}</p>
+        <h4 class="title is-4">Parameters</h4>
+        <p>{{ app.parametres }}</p>
+    </div>
+
+    <div class="columns is-vcentered">
+        <div class="column is-half">
+            <a class="button" href="{{ path('app_index') }}">Back to the list</a>
+        </div>
+    </div>
 {% endblock %}
