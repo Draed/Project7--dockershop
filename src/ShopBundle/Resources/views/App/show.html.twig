@@ -2,73 +2,30 @@
 
 {% block body %}
     <div class="columns is-vcentered">
-        <div class="column is-half">
-            <a class="button" href="{{ path('app_index') }}">Back to the list</a>
-        </div>
-    </div>
-    <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
+        <div class="column is-two-two">
             <h1 class="title is-1">{{ app.name }}</h1>
         </div>
-        <div class="column">
+            <a class="button is-primary is-medium" href="{{ path('app_pull', { 'name': app.name }) }}">
+                <span class="icon">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </span>Pull
+            </a>
             <a class="button is-success is-medium" href="{{ path('app_edit', { 'id': app.id }) }}">
                 <span class="icon">
                     <i class="fa fa-edit"></i>
                 </span>Edit
             </a>
-        </div>
-        <div class="column ">
-    <h1>App</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ app.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ app.name }}</td>
-            </tr>
-            <tr>
-                <th>Version</th>
-                <td>{{ app.version }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ app.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ app.image }}</td>
-            </tr>
-            <tr>
-                <th>Paramètres</th>
-                <td>{{ app.parametres }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('app_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
-        </li>
-
-    </ul>
-        {{ form_start(delete_form) }}
-            <input class="button is-danger is-medium" type="submit" value="Delete">
-        {{ form_end(delete_form) }}
-        </div>
+            {{ form_start(delete_form) }}
+                <input class="button is-danger is-medium" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
     </div>
     <div class="content">
         <!-- TODO : Place l'image de l'app quelque part, je ne sais pas où... -->
 
         <p>Last version: <span class="tag is-success is-small">{{ app.version }}</span></p>
+        Description :
         <p>{{ app.description }}</p>
-        <h4 class="title is-4">Parameters</h4>
+        <h4 class="title is-6">Parameters</h4>
         <p>{{ app.parametres }}</p>
     </div>
 
