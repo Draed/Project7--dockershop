@@ -18,9 +18,49 @@
             </a>
         </div>
         <div class="column ">
-            {{ form_start(delete_form) }}
-                <input class="button is-danger is-medium" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+    <h1>App</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ app.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ app.name }}</td>
+            </tr>
+            <tr>
+                <th>Version</th>
+                <td>{{ app.version }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ app.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ app.image }}</td>
+            </tr>
+            <tr>
+                <th>Paramètres</th>
+                <td>{{ app.parametres }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('app_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
+        </li>
+
+    </ul>
+        {{ form_start(delete_form) }}
+            <input class="button is-danger is-medium" type="submit" value="Delete">
+        {{ form_end(delete_form) }}
         </div>
     </div>
     <div class="content">

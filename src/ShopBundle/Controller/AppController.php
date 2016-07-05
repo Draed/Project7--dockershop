@@ -138,23 +138,29 @@ class AppController extends Controller
         ;
     }
     
+    
     /**
+     * @Route("/{name}", name="app_pull")
+     * @Method({"GET", "POST"})
      * execute a shell command "docker pull <application-name>"
      * pull is like download
-     * @param App $app The App name
+     * @param App $name The App name
      *
      * @return "bolean", true if correct pull , false if fail.
      */
     
-    private function pullApp(String $application)
+    private function pullApp(String $name)
     {
-        ;
+        shell_exec("docker pull drared/".$name);
+        return $this->render('ShopBundle:App:show.html.twig', array(
+            'app' => $app,
+        ));
     }
     
     /**
      * execute a shell command "docker push <application-name>"
      * push is like upload
-     * @param App $app The App name
+     * @param App $application The App name
      *
      * @return "bolean", true if correct pull , false if fail.
      */
@@ -168,7 +174,7 @@ class AppController extends Controller
      * execute a shell command "docker pull <application-name>:latest"
      * pull is like download
      * change the version, execute a pull, 
-     * @param App $app The App name
+     * @param App $application The App name
      *
      * @return "bolean", true if correct pull , false if fail.
      */
@@ -182,7 +188,7 @@ class AppController extends Controller
      * get all the version of an app
      * only the 5 latest version are stored
      *  
-     * @param App $app The App name
+     * @param App $application The App name
      *
      * @return list of all version.
      */
