@@ -5,19 +5,18 @@
 {% endblock %}
 
 {% block body %}
-    <div class="section">
-        <div class="columns">
-            <div class="column is-two-thirds">
-                <h1 class="title is-1">Docker Shop</h1>
-            </div>
-            <div class="column">
-                <a class="button is-primary is-medium" href="{{ path('app_new') }}">
-                    <span class="icon">
-                        <i class="fa fa-plus"></i>
-                    </span>Create a new entry
-                </a>
-            </div>
+    <div class="columns is-vcentered">
+        <div class="column is-two-thirds">
+            <h1 class="title is-1">Browse the apps</h1>
         </div>
+        <div class="column">
+            <a class="button is-success is-medium" href="{{ path('app_new') }}">
+                <span class="icon">
+                    <i class="fa fa-plus"></i>
+                </span>Create a new entry
+            </a>
+        </div>
+    </div>
     <div class="columns is-multiline is-mobile">
         {% for app in apps %}
             <div class="column is-one-quarter">
@@ -41,6 +40,5 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
-            
+    </div>          
 {% endblock %}
