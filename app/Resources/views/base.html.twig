@@ -10,9 +10,57 @@
 
     </head>
     <body>
-        <div class="container">
-            {% block body %}{% endblock %}
-        </div>
+        <section class="hero is-info is-bold is-fullheight">
+        
+            <!-- Top -->
+            <div class="hero-head">
+                <div class="container">
+                    <header class="nav">
+                        <div class="container">
+                            <div class="nav-left">
+                                <a class="nav-item">
+                                    <img src="{{ asset('logo.png') }}" alt="Docker Shop">
+                                </a>
+                            </div>
+                            <span class="nav-toggle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <div class="nav-right nav-menu has-shadow">
+                                <a class="nav-item is-active">
+                                    Some
+                                </a>
+                                <a class="nav-item">
+                                    Awesome
+                                </a>
+                                <a class="nav-item">
+                                   Links
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="hero-body">
+                <div class="container">     
+                    {# <div class="section"> #}
+                        {% block body %}{% endblock %}
+                    {# </div> #}
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="hero-foot">
+                <div class="container">
+                    
+                </div>
+            </div>
+        </section>
+
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
