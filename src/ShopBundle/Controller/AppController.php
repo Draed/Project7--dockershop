@@ -140,34 +140,21 @@ class AppController extends Controller
     
     
     /**
-     * @Route("/{name}", name="app_pull")
-     * @Method({"GET", "POST"})
+     * @Route("/{name}/pull", name="app_pull")
+     * @Method({"GET"})
      * execute a shell command "docker pull <application-name>"
      * pull is like download
-     * @param App $name The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
      */
     
-    private function pullApp(String $name)
+    public function pullApp(App $app)
     {
         shell_exec("docker pull drared/".$name);
-
-        $deleteForm = $this->createDeleteForm($app);
-        $editForm = $this->createForm('ShopBundle\Form\AppType', $app);
-        return $this->render('ShopBundle:App:edit.html.twig', array(
-            'app' => $app,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render('ShopBundle:App:show.html.twig');
     }
     
     /**
      * execute a shell command "docker push <application-name>"
      * push is like upload
-     * @param App $application The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
      */
     
     private function pushApp(String $application)
@@ -179,9 +166,6 @@ class AppController extends Controller
      * execute a shell command "docker pull <application-name>:latest"
      * pull is like download
      * change the version, execute a pull, 
-     * @param App $application The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
      */
     
     private function updateVersion(String $application)
