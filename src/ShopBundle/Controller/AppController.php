@@ -152,8 +152,13 @@ class AppController extends Controller
     private function pullApp(String $name)
     {
         shell_exec("docker pull drared/".$name);
-        return $this->render('ShopBundle:App:show.html.twig', array(
+
+        $deleteForm = $this->createDeleteForm($app);
+        $editForm = $this->createForm('ShopBundle\Form\AppType', $app);
+        return $this->render('ShopBundle:App:edit.html.twig', array(
             'app' => $app,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
         ));
     }
     
