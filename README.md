@@ -21,7 +21,7 @@ Convertir tous services en applications gràce à docker. A la manière du docke
 ## langage développement :
 
 PHP : framework Symfony
-HTML, CSS : Bulma.io
+HTML, CSS : Bulma.io, Font-Awesome
 javascript : Angular.js
 
 ## environnement de développement :

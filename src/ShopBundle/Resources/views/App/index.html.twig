@@ -24,16 +24,15 @@
                 <div class="card is-fullwidth">
                     <header class="card-header">
                         <p class="card-header-title">
-                            <a href="{{ path('app_show', { 'id': app.id }) }}">{{ app.name }}</a>
+                            <a href="{{ path('app_show', { 'id': app.id }) }}">{{ app.name }} <span class="tag is-small">{{ app.version }}</span></a>
                         </p>
                     </header>
-                    <div class="card-content">
-                        <div class="content">
-                            <strong>Version:</strong> {{ app.version }}</a>
-                            <br>
-                            <strong>Image: </strong> {{ app.image }}</a>
-                            {# <small>11:09 PM - 1 Jan 2016</small> #}
-                        </div>
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                           <a href="{{ path('app_show', { 'id': app.id }) }}">
+                                <img src={{ app.image ? asset('bundles/Shop/img/app/.app.image' ) : asset('bundles/Shop/img/app/default300x225.png') }} alt="">{{ app.image }}</img>
+                            </a>
+                        </figure>
                     </div>
                     <footer class="card-footer">
                         <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
