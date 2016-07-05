@@ -164,9 +164,6 @@ class AppController extends Controller
     /**
      * execute a shell command "docker push <application-name>"
      * push is like upload
-     * @param App $application The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
      */
     
     private function pushApp(String $application)
@@ -178,9 +175,6 @@ class AppController extends Controller
      * execute a shell command "docker pull <application-name>:latest"
      * pull is like download
      * change the version, execute a pull, 
-     * @param App $application The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
      */
     
     private function updateVersion(String $application)
