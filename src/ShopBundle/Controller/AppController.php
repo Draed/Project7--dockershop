@@ -140,18 +140,17 @@ class AppController extends Controller
     
     
     /**
-     * @Route("/{name}", name="app_pull")
-     * @Method({"GET", "POST"})
+     * @Route("/{id}/pull", name="app_pull")
+     * @Method("GET")
      * execute a shell command "docker pull <application-name>"
      * pull is like download
-     * @param App $name The App name
-     *
-     * @return "bolean", true if correct pull , false if fail.
+     * @param App $app The app entity
+     * @return boolean
      */
     
-    private function pullApp(String $name)
+    public function pullAction(App $app)
     {
-        shell_exec("docker pull drared/".$name);
+        shell_exec("docker pull drared/".$app->getName());
 
         $deleteForm = $this->createDeleteForm($app);
         $editForm = $this->createForm('ShopBundle\Form\AppType', $app);
