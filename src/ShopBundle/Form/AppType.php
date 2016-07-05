@@ -5,6 +5,7 @@ namespace ShopBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType; /* Allow to use textarea type field */
 
 class AppType extends AbstractType
 {
@@ -17,7 +18,7 @@ class AppType extends AbstractType
         $builder
             ->add('name')
             ->add('version')
-            ->add('description')
+            ->add('description', TextareaType::class)
             ->add('image', null, array(
                 'required' => false
                 ))
