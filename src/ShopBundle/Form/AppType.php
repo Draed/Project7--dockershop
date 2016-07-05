@@ -18,8 +18,12 @@ class AppType extends AbstractType
             ->add('name')
             ->add('version')
             ->add('description')
-            ->add('image')
-            ->add('parametres')
+            ->add('image', null, array(
+                'required' => false
+                ))
+            ->add('parametres', null, array(
+                'required' => false
+                ))
         ;
     }
     
