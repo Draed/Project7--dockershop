@@ -30,7 +30,7 @@
                     <div class="card-image">
                         <figure class="image is-4by3">
                            <a href="{{ path('app_show', { 'id': app.id }) }}">
-                                <img src={{ app.image ? asset('bundles/Shop/img/app/.app.image' ) : asset('bundles/Shop/img/app/default300x225.png') }} alt="">{{ app.image }}</img>
+                                <img src={{ app.image ? asset('bundles/Shop/img/app/' ~ app.image ) : asset('bundles/Shop/img/app/default300x225.png') }} alt="">{{ app.image }}</img>
                             </a>
                         </figure>
                     </div>

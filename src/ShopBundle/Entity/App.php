@@ -47,14 +47,14 @@ class App
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
-    private $image;
+    private $image = null;
     
         /**
      * @var string
      *
      * @ORM\Column(name="parametres", type="string", length=255)
      */
-    private $parametres;
+    private $parametres = null;
 
     /**
      * Get id
