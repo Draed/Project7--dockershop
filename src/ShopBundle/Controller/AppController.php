@@ -140,16 +140,25 @@ class AppController extends Controller
     
     
     /**
-     * @Route("/{name}/pull", name="app_pull")
-     * @Method({"GET"})
+     * @Route("/{id}/pull", name="app_pull")
+     * @Method("GET")
      * execute a shell command "docker pull <application-name>"
      * pull is like download
+     * @param App $app The app entity
+     * @return boolean
      */
     
-    public function pullApp(App $app)
+    public function pullAction(App $app)
     {
-        shell_exec("docker pull drared/".$name);
-        return $this->render('ShopBundle:App:show.html.twig');
+        shell_exec("docker pull drared/".$app->getName());
+
+        $deleteForm = $this->createDeleteForm($app);
+        $editForm = $this->createForm('ShopBundle\Form\AppType', $app);
+        return $this->render('ShopBundle:App:edit.html.twig', array(
+            'app' => $app,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
     }
     
     /**
