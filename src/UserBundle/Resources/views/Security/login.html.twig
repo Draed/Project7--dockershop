@@ -4,7 +4,6 @@
 
 {% block body %}
 
-  {# S'il y a une erreur, on l'affiche dans un joli cadre #}
   {% if error %}
     <article class="message is-warning">
       <div class="message-header">
@@ -13,27 +12,30 @@
     </article>
   {% endif %}
 
+  <div class="columns is-mobile">
+    <div class="column is-half is-4  is-offset-4">
+      <form action="{{ path('login_check') }}" method="post">
+        <label class="label" for="username">Login :</label>
+        <p class="control has-icon">
+          <input class="input" type="username" id="username" name="_username" value="{{ last_username }}" placeholder="Username">
+          <i class="fa fa-sign-in"></i>
+        </p>
 
-  <form action="{{ path('login_check') }}" method="post">
-    <label class="label" for="username">Login :</label>
-    <p class="control has-icon">
-    <input class="input" type="username" id="username" name="_username" value="{{ last_username }}" placeholder="Username">
-    <i class="fa fa-sign-in"></i>
-    </p>
+        <label class="label" for="password">Password</label>
+        <p class="control has-icon">
+          <input class="input" type="password" id="password" name="_password" placeholder="Password">
+          <i class="fa fa-lock"></i>
+        </p>
 
-    <label class="label" for="password">Password</label>
-    <p class="control has-icon">
-    <input class="input" type="password" id="password" name="_password" placeholder="Password">
-    <i class="fa fa-lock"></i>
-    </p>
-
-    <br />
-    <br />
-    <p class="control">
-  <button class="button is-success">
-    Login
-  </button>
-  </p>
-  </form>
+        <br />
+        <br />
+        <p class="control">
+          <button class="button is-success">
+            Login
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
 
 {% endblock %}
