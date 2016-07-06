@@ -8,6 +8,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use ShopBundle\Entity\App;
 use ShopBundle\Form\AppType;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 /**
  * App controller.
@@ -107,9 +110,11 @@ class AppController extends Controller
      *
      * @Route("/{id}", name="app_delete")
      * @Method("DELETE")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, App $app)
     {
+
         $form = $this->createDeleteForm($app);
         $form->handleRequest($request);
 

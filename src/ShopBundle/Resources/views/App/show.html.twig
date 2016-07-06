@@ -15,9 +15,11 @@
                     <i class="fa fa-edit"></i>
                 </span>Edit
             </a>
-            {{ form_start(delete_form) }}
-                <input class="button is-danger is-medium" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
+            {% if is_granted('ROLE_ADMIN') %}
+                {{ form_start(delete_form) }}
+                    <input class="button is-danger is-medium" type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            {% endif %}
     </div>
     <div class="content">
         <!-- TODO : Place l'image de l'app quelque part, je ne sais pas où... -->
