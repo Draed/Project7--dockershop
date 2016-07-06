@@ -14,7 +14,7 @@ use ShopBundle\Form\AppType;
  *
  * @Route("/app")
  */
-class AppController extends Controller
+class ShopController extends Controller
 {
     /**
      * Lists all App entities.
