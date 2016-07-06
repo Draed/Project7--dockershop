@@ -41,6 +41,7 @@ class AppController extends Controller
      *
      * @Route("/new", name="app_new")
      * @Method({"GET", "POST"})
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -83,6 +84,7 @@ class AppController extends Controller
      *
      * @Route("/{id}/edit", name="app_edit")
      * @Method({"GET", "POST"})
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction(Request $request, App $app)
     {

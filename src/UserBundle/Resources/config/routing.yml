@@ -9,6 +9,7 @@ login:
 
 login_check:
     path: /login_check
+    defaults: { _controller: UserBundle:Security:login }
 
 logout:
     path: /login

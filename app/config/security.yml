@@ -3,6 +3,8 @@
 security:
   access_control:
     - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/new, roles: ROLE_ADMIN }
+    - { path: ^/edit, roles: ROLE_ADMIN }
 
   encoders:
     Symfony\Component\Security\Core\User\User: plaintext

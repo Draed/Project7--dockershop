@@ -38,6 +38,7 @@ class ShopController extends Controller
      *
      * @Route("/new", name="app_new")
      * @Method({"GET", "POST"})
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function newAction(Request $request)
     {
@@ -80,6 +81,7 @@ class ShopController extends Controller
      *
      * @Route("/{id}/edit", name="app_edit")
      * @Method({"GET", "POST"})
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function editAction(Request $request, App $app)
     {
@@ -107,6 +109,7 @@ class ShopController extends Controller
      *
      * @Route("/{id}", name="app_delete")
      * @Method("DELETE")
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function deleteAction(Request $request, App $app)
     {

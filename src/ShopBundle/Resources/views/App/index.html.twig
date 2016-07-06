@@ -28,11 +28,12 @@
                     </div>
                     <footer class="card-footer">
                         <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
-                        <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
+                        {% if is_granted('ROLE_ADMIN') %}<a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>{% endif %}
                     </footer>
                 </div>
             </div>
         {% endfor %}
+        {% if is_granted('ROLE_ADMIN') %}
         <div class="column">
             <a class="button is-success is-medium" href="{{ path('app_new') }}">
                 <span class="icon">
@@ -40,5 +41,6 @@
                 </span>Create a new entry
             </a>
         </div>
+        {% endif %}
     </div>          
 {% endblock %}

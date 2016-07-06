@@ -12,7 +12,7 @@ class LoadApp implements FixtureInterface
   public function load(ObjectManager $manager)
   {
     // Les noms d'applicationà créer
-    $listNames = array('blog', 'redmine', 'minecraft');
+    $listNames = array('blog', 'redmine', 'minecraft','jenkins','owncloud');
     $version = '1.0';
     $image = 'default300x225.png';
     $parametres = '-p 80:80';

@@ -27,9 +27,18 @@ class LoadUser implements FixtureInterface
       // On définit uniquement le role ROLE_USER qui est le role de base
       $user->setRoles(array('ROLE_USER'));
 
+      
       // On le persiste
       $manager->persist($user);
+      
     }
+    // administrator :
+      $admin = new User;
+      $admin->setUsername("Admin");
+      $admin->setPassword("Admin123");
+      $admin->setSalt('');
+      $admin->setRoles(array('ROLE_ADMIN'));
+      $manager->persist($admin);
 
     // On déclenche l'enregistrement
     $manager->flush();
