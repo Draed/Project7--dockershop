@@ -6,15 +6,8 @@
 
 {% block body %}
     <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
+        <div class="column is-two-two">
             <h1 class="title is-1">Browse the apps</h1>
-        </div>
-        <div class="column">
-            <a class="button is-success is-medium" href="{{ path('app_new') }}">
-                <span class="icon">
-                    <i class="fa fa-plus"></i>
-                </span>Create a new entry
-            </a>
         </div>
     </div>
     <div class="columns is-multiline is-mobile">
@@ -40,5 +33,12 @@
                 </div>
             </div>
         {% endfor %}
+        <div class="column">
+            <a class="button is-success is-medium" href="{{ path('app_new') }}">
+                <span class="icon">
+                    <i class="fa fa-plus"></i>
+                </span>Create a new entry
+            </a>
+        </div>
     </div>          
 {% endblock %}
