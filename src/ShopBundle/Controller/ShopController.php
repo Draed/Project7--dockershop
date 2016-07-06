@@ -8,16 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use ShopBundle\Entity\App;
 use ShopBundle\Form\AppType;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
 
 /**
  * App controller.
  *
  * @Route("/app")
  */
-class AppController extends Controller
+class ShopController extends Controller
 {
     /**
      * Lists all App entities.
@@ -116,7 +113,6 @@ class AppController extends Controller
      */
     public function deleteAction(Request $request, App $app)
     {
-
         $form = $this->createDeleteForm($app);
         $form->handleRequest($request);
 

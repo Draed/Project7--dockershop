@@ -1,0 +1,41 @@
+{# src/UserBundle/Resources/views/Security/login.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  {% if error %}
+    <article class="message is-warning">
+      <div class="message-header">
+        <div class="alert alert-danger">{{ error.message }}</div>
+      </div>
+    </article>
+  {% endif %}
+
+  <div class="columns is-mobile">
+    <div class="column is-half is-4  is-offset-4">
+      <form action="{{ path('login_check') }}" method="post">
+        <label class="label" for="username">Login :</label>
+        <p class="control has-icon">
+          <input class="input" type="username" id="username" name="_username" value="{{ last_username }}" placeholder="Username">
+          <i class="fa fa-sign-in"></i>
+        </p>
+
+        <label class="label" for="password">Password</label>
+        <p class="control has-icon">
+          <input class="input" type="password" id="password" name="_password" placeholder="Password">
+          <i class="fa fa-lock"></i>
+        </p>
+
+        <br />
+        <br />
+        <p class="control">
+          <button class="button is-success">
+            Login
+          </button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

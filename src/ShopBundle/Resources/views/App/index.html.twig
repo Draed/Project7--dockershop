@@ -6,15 +6,8 @@
 
 {% block body %}
     <div class="columns is-vcentered">
-        <div class="column is-two-thirds">
+        <div class="column is-two-two">
             <h1 class="title is-1">Browse the apps</h1>
-        </div>
-        <div class="column">
-            <a class="button is-success is-medium" href="{{ path('app_new') }}">
-                <span class="icon">
-                    <i class="fa fa-plus"></i>
-                </span>Create a new entry
-            </a>
         </div>
     </div>
     <div class="columns is-multiline is-mobile">
@@ -35,10 +28,19 @@
                     </div>
                     <footer class="card-footer">
                         <a class="card-footer-item" href="{{ path('app_show', { 'id': app.id }) }}">Show</a>
-                        <a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>
+                        {% if is_granted('ROLE_ADMIN') %}<a class="card-footer-item" href="{{ path('app_edit', { 'id': app.id }) }}">Edit</a>{% endif %}
                     </footer>
                 </div>
             </div>
         {% endfor %}
+        {% if is_granted('ROLE_ADMIN') %}
+        <div class="column">
+            <a class="button is-success is-medium" href="{{ path('app_new') }}">
+                <span class="icon">
+                    <i class="fa fa-plus"></i>
+                </span>Create a new entry
+            </a>
+        </div>
+        {% endif %}
     </div>          
 {% endblock %}
