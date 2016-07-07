@@ -15,6 +15,7 @@ security:
       main:
         pattern:      ^/
         anonymous:    true
+        logout:       true
         provider:     main
         form_login:
           login_path: fos_user_security_login
