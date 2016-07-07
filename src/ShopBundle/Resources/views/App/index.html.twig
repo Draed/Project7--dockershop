@@ -33,14 +33,15 @@
                 </div>
             </div>
         {% endfor %}
+    </div>
         {% if is_granted('ROLE_ADMIN') %}
-        <div class="column">
-            <a class="button is-success is-medium" href="{{ path('app_new') }}">
-                <span class="icon">
-                    <i class="fa fa-plus"></i>
-                </span>Create a new entry
-            </a>
-        </div>
+            <div class="column">
+                <a class="button is-success is-medium" href="{{ path('app_new') }}">
+                    <span class="icon">
+                        <i class="fa fa-plus"></i>
+                    </span>Create a new entry
+                </a>
+            </div>
         {% endif %}
     </div>          
 {% endblock %}
