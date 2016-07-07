@@ -37,8 +37,8 @@
                                 <a class="nav-item">
                                    Account
                                 </a>
-                                {% if app.user %}
-                                    <a class="nav-item" href="/logout">
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    <a class="nav-item" href="{{ path('fos_user_security_logout') }}">
                                         Logout
                                     </a>
                                 {% endif %}
