@@ -7,9 +7,6 @@
 ##Draed hash
     "hash": "b6858639f4ad8373a25ecd9a17a8b51c",
     "content-hash": "99427ef64b021f6f33cb0947236b3556",
-##Dada hash
-    #"hash": "28afed8b69aa6b08d6f8c1f7d5d117a4",
-    #"content-hash": "7e83e4a9ff6b19fe11cd07898bc5085e",
     "packages": [
         {
             "name": "doctrine/annotations",
