@@ -49,6 +49,15 @@ Image docker complète : https://github.com/eko/docker-symfony
 - Téléchargement d'une application = Installation d'une image docker (#docker pull)
 - Paramètrage du lancement application = lancement des containers docker (#docker run)
 
+### Login (Temp) :
+Take care about the sensitive case.
+
+#### As Admin : 
+- Admin|Admin123
+
+#### As User
+- Alexandre|Alexandre
+
 ## Maquette :
 
 Affichage du shop :

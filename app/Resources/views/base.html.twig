@@ -37,6 +37,11 @@
                                 <a class="nav-item">
                                    Account
                                 </a>
+                                {% if app.user %}
+                                    <a class="nav-item" href="/logout">
+                                        Logout
+                                    </a>
+                                {% endif %}
                             </div>
                         </div>
                     </header>
