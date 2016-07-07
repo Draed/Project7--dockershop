@@ -4,6 +4,7 @@ imports:
     - { resource: services.yml }
     - { resource: "@ShopBundle/Resources/config/services.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
+    - { resource: "@LocalRepoBundle/Resources/config/services.yml" }
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb'
