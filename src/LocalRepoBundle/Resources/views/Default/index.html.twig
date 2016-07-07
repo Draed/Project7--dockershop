@@ -1,1 +1,27 @@
-Hello World!
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Docker Shop
+{% endblock %}
+
+{% block body %}
+    <div class="columns is-vcentered">
+        <div class="column is-two-two">
+            <h1 class="title is-1">Browse the apps in local</h1>
+        </div>
+    </div>
+    <div class="columns is-multiline is-mobile">
+        {% for containers in localApp %}
+            <div class="column is-one-quarter">
+                <div class="card is-fullwidth">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                        </p>
+                    </header>
+                    <div class="card-image">
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>         
+{% endblock %}
