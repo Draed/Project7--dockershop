@@ -2,10 +2,21 @@
 // src/UserBundle/Entity/User.php
 namespace UserBundle\Entity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
 
-class User implements UserInterface
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ */
+class User implements extends BaseUser
 {
-
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     /**
      * @var int
      */
