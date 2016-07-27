@@ -8,6 +8,7 @@
     <div class="columns is-vcentered">
         <div class="column is-two-two">
             <h1 class="title is-1">Browse the app in local</h1>
+                <h1 class="subtitle is-5">Only running App are shown</h1>
         </div>
     </div>
     <div class="columns is-multiline is-mobile">
@@ -16,18 +17,18 @@
                 <div class="card is-fullwidth">
                     <header class="card-header">
                         <p class="card-header-title">
-                            {{container.id }}<br>
-
-                            
                         </p>
                     </header>
                     <div class="card-image">
                         <figure class="image is-4by3">
-                                <img src={{ container.image ? asset('bundles/Shop/img/container/' ~ container.image ) : asset('bundles/Shop/img/container/default300x225.png') }} alt="">{{ container.image }}</img>
+                                <img src={{ container.image ? asset('bundles/Shop/img/container/' ~ container.image ) : asset('bundles/Shop/img/app/default300x225.png') }} alt=""></img>
                             </a>
                         </figure>
                     </div>
                     <footer class="card-footer">
+                    id : {{container.id }}<br>
+                    Status : {{container.status }}<br>
+                    Image : {{ container.image }}
                     </footer>
                 </div>
             </div>
