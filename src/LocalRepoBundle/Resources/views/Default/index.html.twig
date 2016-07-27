@@ -7,19 +7,28 @@
 {% block body %}
     <div class="columns is-vcentered">
         <div class="column is-two-two">
-            <h1 class="title is-1">Browse the apps in local</h1>
+            <h1 class="title is-1">Browse the app in local</h1>
         </div>
     </div>
     <div class="columns is-multiline is-mobile">
-        {% for containers in localApp %}
+    	{% for container in containers %}
             <div class="column is-one-quarter">
                 <div class="card is-fullwidth">
                     <header class="card-header">
                         <p class="card-header-title">
+                            {{container.id }}<br>
+
+                            
                         </p>
                     </header>
                     <div class="card-image">
+                        <figure class="image is-4by3">
+                                <img src={{ container.image ? asset('bundles/Shop/img/container/' ~ container.image ) : asset('bundles/Shop/img/container/default300x225.png') }} alt="">{{ container.image }}</img>
+                            </a>
+                        </figure>
                     </div>
+                    <footer class="card-footer">
+                    </footer>
                 </div>
             </div>
         {% endfor %}

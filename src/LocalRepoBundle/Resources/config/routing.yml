@@ -1,3 +1,7 @@
 local_repo_homepage:
     path:     /
     defaults: { _controller: LocalRepoBundle:Default:index }
+
+LocalApp:
+    path:     /LocalApp
+    defaults: { _controller: LocalRepoBundle:LocalApp:index }

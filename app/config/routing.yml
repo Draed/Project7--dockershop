@@ -2,6 +2,10 @@ local_repo:
     resource: "@LocalRepoBundle/Resources/config/routing.yml"
     prefix:   /
 
+Local_App:
+    resource: "@LocalRepoBundle/Resources/config/routing.yml"
+    prefix:   /
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
